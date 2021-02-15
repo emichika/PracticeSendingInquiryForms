@@ -526,7 +526,7 @@ function resultJudgment() {
   }
   // 問い合わせ内容
   const inquiryValue = document.getElementById("inquiry").value;
-  // 問い合わせ内容
+
   if (inquiryValue == inquiryAnswer || inquiryValue == inquiryNewLineAnswer) {
     document.getElementById("inquiryResult").innerText = "OK";
     document.getElementById("inquiryResult").style.color = "#0000FF";
@@ -546,34 +546,4 @@ function resultJudgment() {
       "土日を除いた3営業日後を指定して下さい。本番では祝日も考慮します。";
     document.getElementById("answerYesDateResult").style.color = "#FF0000";
   }
-}
-// セッションデータ削除処理
-function delSessionData() {
-  // セッションデータの削除
-  sessionStorage.removeItem("inquiryItemsValue");
-  sessionStorage.removeItem("companyValue");
-  sessionStorage.removeItem("firstPostalCodeValue");
-  sessionStorage.removeItem("latterPostalCodeValue");
-  sessionStorage.removeItem("firstStreetAddressValue");
-  sessionStorage.removeItem("latterStreetAddressValue");
-  sessionStorage.removeItem("homePageValue");
-  sessionStorage.removeItem("occupationValue");
-  sessionStorage.removeItem("departmentValue");
-  sessionStorage.removeItem("positionValue");
-  sessionStorage.removeItem("lastNameValue");
-  sessionStorage.removeItem("firstNameValue");
-  sessionStorage.removeItem("lastFuriganaValue");
-  sessionStorage.removeItem("firstFuriganaValue");
-  sessionStorage.removeItem("sexValue");
-  sessionStorage.removeItem("yearValue");
-  sessionStorage.removeItem("monthValue");
-  sessionStorage.removeItem("dayValue");
-  sessionStorage.removeItem("ageValue");
-  sessionStorage.removeItem("telValue");
-  sessionStorage.removeItem("faxValue");
-  sessionStorage.removeItem("mailValue");
-  sessionStorage.removeItem("replyValue");
-  sessionStorage.removeItem("emailNewsletterValue");
-  sessionStorage.removeItem("subjectValue");
-  sessionStorage.removeItem("inquiryValue");
 }

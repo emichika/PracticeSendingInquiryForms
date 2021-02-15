@@ -216,7 +216,7 @@
                   name="sex"
                   class="mgr-5"
                   value="male"
-                  onclick="onOff(this)"
+                  checked
                 /><label for="male" class="mgtr-3-10">男性</label>
               </div>
               <div>
@@ -226,7 +226,6 @@
                   name="sex"
                   class="mgr-5"
                   value="female"
-                  onclick="onOff(this)"
                 /><label for="female" class="mgtr-3-10">女性</label>
               </div>
             </div>
@@ -367,28 +366,27 @@
         <div class="form-group">
           <label>弊社 Webサイトをどこで知りましたか ?</label>
           <div>
-            <input type="checkbox" id="chkShop" name="wdykItems" />
+            <input type="checkbox" id="chkShop" name="chkShop" />
             <label for="chkShop">お店を見て</label>
           </div>
           <div>
-            <input type="checkbox" id="chkHomePage" name="wdykItems" />
+            <input type="checkbox" id="chkHomePage" name="chkHomePage" />
             <label for="chkHomePage">ホームページより</label>
-          </div>
-          <div>
-            <input type="checkbox" id="chkIntroduction" name="wdykItems" />
-            <label for="chkIntroduction">友達、知人より紹介</label>
-          </div>
-          <div>
-            <input type="checkbox" id="chkSns" name="wdykItems" />
-            <label for="chkSns">Twitter・Facebook などの SNS で知った</label>
           </div>
           <div>
             <input
               type="checkbox"
-              id="chkOther"
-              name="wdykItems"
-              onclick="changeReadOnly(this.checked)"
+              id="chkIntroduction"
+              name="chkIntroduction"
             />
+            <label for="chkIntroduction">友達、知人より紹介</label>
+          </div>
+          <div>
+            <input type="checkbox" id="chkSns" name="chkSns" />
+            <label for="chkSns">Twitter・Facebook などの SNS で知った</label>
+          </div>
+          <div>
+            <input type="checkbox" id="chkOther" name="wdykItems" />
             <label for="chkOther"
               >その他<span class="fc-r"> ※ 詳細を記載して下さい。</span></label
             >
@@ -397,7 +395,6 @@
               id="dtherDetails"
               name="dtherDetails"
               class="form-control txtWid"
-              readonly
             />
           </div>
         </div>

@@ -226,11 +226,25 @@ function getSessionData() {
   document.getElementById("answerYesDate").value = sessionStorage.getItem(
     "answerYesDateValue"
   );
-  // 弊社 Webサイトをどこで知りましたか ?
-  var a = document.getElementById("whereDidYouKnowItems");
-  var b = sessionStorage.getItem("whereDidYouKnowItemsValue");
-  for (let i = 0; i < a.wdykItems.length; i++) {
-    a.wdykItems[i].checked = b.wdykItems[i].checked;
+  // お店を見て
+  if (sessionStorage.getItem("chkShopValue") == "true") {
+    document.getElementById("chkShop").checked = true;
+  }
+  // ホームページより
+  if (sessionStorage.getItem("chkHomePageValue") == "true") {
+    document.getElementById("chkHomePage").checked = true;
+  }
+  // 友達、知人より紹介
+  if (sessionStorage.getItem("chkIntroductionValue") == "true") {
+    document.getElementById("chkIntroduction").checked = true;
+  }
+  // Twitter・Facebook などの SNS で知った
+  if (sessionStorage.getItem("chkSnsValue") == "true") {
+    document.getElementById("chkSns").checked = true;
+  }
+  // その他
+  if (sessionStorage.getItem("chkOtherValue") == "true") {
+    document.getElementById("chkOther").checked = true;
   }
   // その他_詳細
   document.getElementById("dtherDetails").value = sessionStorage.getItem(
@@ -303,8 +317,16 @@ function setSessionData() {
   sessionStorage.setItem("inquiryValue", inquiry.value);
   // 回答希望日
   sessionStorage.setItem("answerYesDateValue", answerYesDate.value);
-  // 弊社 Webサイトをどこで知りましたか ?
-  sessionStorage.setItem("chkShopValue", chkShop.value);
+  // お店を見て
+  sessionStorage.setItem("chkShopValue", chkShop.checked);
+  // ホームページより
+  sessionStorage.setItem("chkHomePageValue", chkHomePage.checked);
+  // 友達、知人より紹介
+  sessionStorage.setItem("chkIntroductionValue", chkIntroduction.checked);
+  // Twitter・Facebook などの SNS で知った
+  sessionStorage.setItem("chkSnsValue", chkSns.checked);
+  // その他
+  sessionStorage.setItem("chkOtherValue", chkOther.checked);
   // その他_詳細
   sessionStorage.setItem("dtherDetailsValue", dtherDetails.value);
   // 問い合わせ確認画面へ遷移
@@ -540,7 +562,6 @@ function resultJudgment() {
   }
   // 問い合わせ内容
   const inquiryValue = document.getElementById("inquiry").value;
-  // 問い合わせ内容
   if (inquiryValue == inquiryAnswer || inquiryValue == inquiryNewLineAnswer) {
     document.getElementById("inquiryResult").innerText = "OK";
     document.getElementById("inquiryResult").style.color = "#0000FF";
@@ -560,34 +581,53 @@ function resultJudgment() {
       "土日を除いた3営業日後を指定して下さい。本番では祝日も考慮します。";
     document.getElementById("answerYesDateResult").style.color = "#FF0000";
   }
-}
-// セッションデータ削除処理
-function delSessionData() {
-  // セッションデータの削除
-  sessionStorage.removeItem("inquiryItemsValue");
-  sessionStorage.removeItem("companyValue");
-  sessionStorage.removeItem("firstPostalCodeValue");
-  sessionStorage.removeItem("latterPostalCodeValue");
-  sessionStorage.removeItem("firstStreetAddressValue");
-  sessionStorage.removeItem("latterStreetAddressValue");
-  sessionStorage.removeItem("homePageValue");
-  sessionStorage.removeItem("occupationValue");
-  sessionStorage.removeItem("departmentValue");
-  sessionStorage.removeItem("positionValue");
-  sessionStorage.removeItem("lastNameValue");
-  sessionStorage.removeItem("firstNameValue");
-  sessionStorage.removeItem("lastFuriganaValue");
-  sessionStorage.removeItem("firstFuriganaValue");
-  sessionStorage.removeItem("sexValue");
-  sessionStorage.removeItem("yearValue");
-  sessionStorage.removeItem("monthValue");
-  sessionStorage.removeItem("dayValue");
-  sessionStorage.removeItem("ageValue");
-  sessionStorage.removeItem("telValue");
-  sessionStorage.removeItem("faxValue");
-  sessionStorage.removeItem("mailValue");
-  sessionStorage.removeItem("replyValue");
-  sessionStorage.removeItem("emailNewsletterValue");
-  sessionStorage.removeItem("subjectValue");
-  sessionStorage.removeItem("inquiryValue");
+  // 弊社 Webサイトをどこで知りましたか ?
+  var num = 0;
+  // お店を見て
+  if (sessionStorage.getItem("chkShopValue") == "true") {
+    num++;
+  }
+  // ホームページより
+  if (sessionStorage.getItem("chkHomePageValue") == "true") {
+    num++;
+  }
+  // 友達、知人より紹介
+  if (sessionStorage.getItem("chkIntroductionValue") == "true") {
+    num++;
+  }
+  // Twitter・Facebook などの SNS で知った
+  if (sessionStorage.getItem("chkSnsValue") == "true") {
+    num++;
+  }
+  // その他
+  if (sessionStorage.getItem("chkOtherValue") == "true") {
+    num++;
+  }
+  // 複数選択の場合
+  if (2 <= num) {
+    document.getElementById("whereDidYouKnowResult").innerText =
+      '"その他"のみを指定して下さい。';
+    document.getElementById("whereDidYouKnowResult").style.color = "#FF0000";
+  } else if (0 == num) {
+    // 選択なしの場合
+    document.getElementById("whereDidYouKnowResult").innerText =
+      '"その他"を指定して下さい。';
+    document.getElementById("whereDidYouKnowResult").style.color = "#FF0000";
+  } else if (sessionStorage.getItem("chkOtherValue") != "true") {
+    // その他が選択されていない場合
+    document.getElementById("whereDidYouKnowResult").innerText =
+      '"その他"を指定して下さい。';
+    document.getElementById("whereDidYouKnowResult").style.color = "#FF0000";
+  } else if (
+    // 記載内容が誤っている場合
+    sessionStorage.getItem("dtherDetailsValue") != dtherDetailsAnswer
+  ) {
+    document.getElementById("whereDidYouKnowResult").innerText =
+      '"その他"には"Indeed検索にて"を記載して下さい。';
+    document.getElementById("whereDidYouKnowResult").style.color = "#FF0000";
+  } else {
+    // 上記以外
+    document.getElementById("whereDidYouKnowResult").innerText = "OK";
+    document.getElementById("whereDidYouKnowResult").style.color = "#0000FF";
+  }
 }

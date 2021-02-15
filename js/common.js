@@ -1,5 +1,3 @@
-// ラジオボタンの値を保持
-let nowVal;
 // 各項目の解答
 const inquiryItemsOtherAnswer = "other";
 const inquiryItemsRecruitmentAnswer = "recruitment";
@@ -46,10 +44,11 @@ const inquiry200CharactersAnswer = "200";
 const inquiry200CharactersNewLineAnswer = "200\n";
 const inquiry100CharactersAnswer = "100";
 const inquiry100CharactersNewLineAnswer = "100\n";
+const dtherDetailsAnswer = "Indeed検索にて";
 // コピーライト
 const copr = "&copy; Copyright emichika Inc. All Rights <span id='ver'></span>";
 // バージョン
-const verNum = "0.0.0";
+const verNum = "1.0.0";
 // コピーライトの設定
 function setCopyright() {
   copyright.innerHTML = copr;
@@ -57,15 +56,6 @@ function setCopyright() {
 // バージョンの設定
 function setVer() {
   ver.innerHTML = "Ver." + verNum;
-}
-// ラジオボタンのON・OFF処理
-function onOff(obj) {
-  if (nowVal == obj.value) {
-    obj.checked = false;
-    nowVal = "";
-  } else {
-    nowVal = obj.value;
-  }
 }
 // 遷移処理
 function transitionProc(screen) {
@@ -113,16 +103,8 @@ function getAnswerYesDate() {
   // 土・日を除く3営業日
   return y + "-" + m + "-" + d;
 }
-// その他_詳細の設定
-function changeReadOnly(isChecked) {
-  // その他テキストボックスの情報取得
-  let target = document.getElementById("dtherDetails");
-  // その他チッェクボックスのチェック有無判定
-  if (isChecked == true) {
-    // 読み取り解除
-    target.readOnly = false;
-  } else {
-    // 読み取り設定
-    target.readOnly = true;
-  }
+// セッションデータ削除処理
+function delSessionData() {
+  // セッションデータの削除
+  window.sessionStorage.clear();
 }

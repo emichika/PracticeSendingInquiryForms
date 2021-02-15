@@ -1,20 +1,9 @@
-// ラジオボタンの値を保持
-var nowVal;
 // 初期処理
 function initProc() {
   // コピーライトの設定
   setCopyright();
   // バージョンの設定
   setVer();
-}
-// ラジオボタンのON・OFF処理
-function onOff(obj) {
-  if (nowVal == obj.value) {
-    obj.checked = false;
-    nowVal = "";
-  } else {
-    nowVal = obj.value;
-  }
 }
 // 問合せ確認画面の入力チェック処理
 function chkTheInput() {
@@ -150,16 +139,11 @@ function chkTheInput() {
   window.location.href = "../html/confirmation.html";
 }
 // 問い合せ確認画面の初期処理
-function confirmationInitProc() {
+function confirmationProc() {
   // コピーライトとバージョンの設定
   initProc();
   // セッションデータの取得
   getSessionData();
-}
-// 遷移処理
-function transitionProc() {
-  // 送信画面へ遷移
-  window.location.href = "../html/send.html";
 }
 // 送信画面の初期処理
 function sendProc() {
@@ -386,35 +370,6 @@ function sendProc() {
       'シート「【基本情報】」、または「"」がないことを確認して下さい。';
     document.getElementById("inquiryResult").style.color = "#FF0000";
   }
-}
-// セッションデータ削除処理
-function delSessionData() {
-  // セッションデータの削除
-  sessionStorage.removeItem("inquiryItemsValue");
-  sessionStorage.removeItem("companyValue");
-  sessionStorage.removeItem("firstPostalCodeValue");
-  sessionStorage.removeItem("latterPostalCodeValue");
-  sessionStorage.removeItem("firstStreetAddressValue");
-  sessionStorage.removeItem("latterStreetAddressValue");
-  sessionStorage.removeItem("occupationValue");
-  sessionStorage.removeItem("departmentValue");
-  sessionStorage.removeItem("positionValue");
-  sessionStorage.removeItem("lastNameValue");
-  sessionStorage.removeItem("firstNameValue");
-  sessionStorage.removeItem("lastFuriganaValue");
-  sessionStorage.removeItem("firstFuriganaValue");
-  sessionStorage.removeItem("sexValue");
-  sessionStorage.removeItem("yearValue");
-  sessionStorage.removeItem("monthValue");
-  sessionStorage.removeItem("dayValue");
-  sessionStorage.removeItem("ageValue");
-  sessionStorage.removeItem("telValue");
-  sessionStorage.removeItem("faxValue");
-  sessionStorage.removeItem("mailValue");
-  sessionStorage.removeItem("customerNumberValue");
-  sessionStorage.removeItem("inquiryValue");
-  // 指定のページへ遷移
-  window.location.href = "https://www.google.co.jp/";
 }
 // セッションデータ取得処理
 function getSessionData() {

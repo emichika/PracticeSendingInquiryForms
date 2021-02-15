@@ -114,16 +114,11 @@ function chkTheInput() {
   window.location.href = "../html/confirmation.html";
 }
 // 問い合せ確認画面の初期処理
-function confirmationInitProc() {
+function confirmationProc() {
   // コピーライトとバージョンの設定
   initProc();
   // セッションデータの取得
   getSessionData();
-}
-// 遷移処理
-function transitionProc() {
-  // 送信画面へ遷移
-  window.location.href = "../html/send.html";
 }
 // 送信画面の初期処理
 function sendProc() {
@@ -281,27 +276,6 @@ function sendProc() {
       'シート「【基本情報】」、または「"」がないことを確認して下さい。';
     document.getElementById("inquiryResult").style.color = "#FF0000";
   }
-}
-// セッションデータ削除処理
-function delSessionData() {
-  // セッションデータの削除
-  sessionStorage.removeItem("inquiryItemsValue");
-  sessionStorage.removeItem("companyValue");
-  sessionStorage.removeItem("firstPostalCodeValue");
-  sessionStorage.removeItem("latterPostalCodeValue");
-  sessionStorage.removeItem("firstStreetAddressValue");
-  sessionStorage.removeItem("latterStreetAddressValue");
-  sessionStorage.removeItem("departmentValue");
-  sessionStorage.removeItem("lastNameValue");
-  sessionStorage.removeItem("firstNameValue");
-  sessionStorage.removeItem("lastFuriganaValue");
-  sessionStorage.removeItem("firstFuriganaValue");
-  sessionStorage.removeItem("telValue");
-  sessionStorage.removeItem("faxValue");
-  sessionStorage.removeItem("mailValue");
-  sessionStorage.removeItem("inquiryValue");
-  // 指定のページへ遷移
-  window.location.href = "https://www.google.co.jp/";
 }
 // セッションデータ取得処理
 function getSessionData() {
