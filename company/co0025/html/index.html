@@ -367,30 +367,35 @@
         <div class="form-group">
           <label>弊社 Webサイトをどこで知りましたか ?</label>
           <div>
-            <input type="checkbox" id="a" name="a" />
-            <label for="a">お店を見て</label>
+            <input type="checkbox" id="chkShop" name="wdykItems" />
+            <label for="chkShop">お店を見て</label>
           </div>
           <div>
-            <input type="checkbox" id="b" name="b" />
-            <label for="b">ホームページより</label>
+            <input type="checkbox" id="chkHomePage" name="wdykItems" />
+            <label for="chkHomePage">ホームページより</label>
           </div>
           <div>
-            <input type="checkbox" id="c" name="c" />
-            <label for="c">友達、知人より紹介</label>
+            <input type="checkbox" id="chkIntroduction" name="wdykItems" />
+            <label for="chkIntroduction">友達、知人より紹介</label>
           </div>
           <div>
-            <input type="checkbox" id="d" name="d" />
-            <label for="d">Twitter・Facebook などの SNS で知った</label>
+            <input type="checkbox" id="chkSns" name="wdykItems" />
+            <label for="chkSns">Twitter・Facebook などの SNS で知った</label>
           </div>
           <div>
-            <input type="checkbox" id="e" name="e" onclick="aaaaa()" />
-            <label for="e"
+            <input
+              type="checkbox"
+              id="chkOther"
+              name="wdykItems"
+              onclick="changeReadOnly(this.checked)"
+            />
+            <label for="chkOther"
               >その他<span class="fc-r"> ※ 詳細を記載して下さい。</span></label
             >
             <input
               type="text"
-              id="f"
-              name="f"
+              id="dtherDetails"
+              name="dtherDetails"
               class="form-control txtWid"
               readonly
             />

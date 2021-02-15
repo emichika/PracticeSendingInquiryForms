@@ -226,6 +226,16 @@ function getSessionData() {
   document.getElementById("answerYesDate").value = sessionStorage.getItem(
     "answerYesDateValue"
   );
+  // 弊社 Webサイトをどこで知りましたか ?
+  var a = document.getElementById("whereDidYouKnowItems");
+  var b = sessionStorage.getItem("whereDidYouKnowItemsValue");
+  for (let i = 0; i < a.wdykItems.length; i++) {
+    a.wdykItems[i].checked = b.wdykItems[i].checked;
+  }
+  // その他_詳細
+  document.getElementById("dtherDetails").value = sessionStorage.getItem(
+    "dtherDetailsValue"
+  );
 }
 // セッションデータ保持処理
 function setSessionData() {
@@ -293,6 +303,10 @@ function setSessionData() {
   sessionStorage.setItem("inquiryValue", inquiry.value);
   // 回答希望日
   sessionStorage.setItem("answerYesDateValue", answerYesDate.value);
+  // 弊社 Webサイトをどこで知りましたか ?
+  sessionStorage.setItem("chkShopValue", chkShop.value);
+  // その他_詳細
+  sessionStorage.setItem("dtherDetailsValue", dtherDetails.value);
   // 問い合わせ確認画面へ遷移
   window.location.href = "../html/confirmation.html";
 }

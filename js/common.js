@@ -113,7 +113,16 @@ function getAnswerYesDate() {
   // 土・日を除く3営業日
   return y + "-" + m + "-" + d;
 }
-function aaaaa() {
-  var t = document.getElementById("e");
-  t.readonly = "false";
+// その他_詳細の設定
+function changeReadOnly(isChecked) {
+  // その他テキストボックスの情報取得
+  let target = document.getElementById("dtherDetails");
+  // その他チッェクボックスのチェック有無判定
+  if (isChecked == true) {
+    // 読み取り解除
+    target.readOnly = false;
+  } else {
+    // 読み取り設定
+    target.readOnly = true;
+  }
 }
