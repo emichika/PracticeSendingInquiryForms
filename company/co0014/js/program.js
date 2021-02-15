@@ -1,12 +1,12 @@
-// 問い合せ画面の初期処理
-function inquiryLoad() {
+// 初期処理
+function initProc() {
   // コピーライトの設定
   setCopyright();
   // バージョンの設定
   setVer();
 }
 // 問合せ確認画面の入力チェック処理
-function confirmationProcess() {
+function chkTheInput() {
   // 会社名の入力チェック
   const company = document.getElementById("company");
   // 未入力の場合
@@ -79,7 +79,7 @@ function confirmationProcess() {
     // 処理終了
     return false;
   }
-  // セッションデータを保存
+  // セッションデータ保持処理
   var element = document.getElementById("inquiryItems");
   sessionStorage.setItem("inquiryItemsValue", element.inquiryItems.value);
   // 会社名
@@ -116,28 +116,22 @@ function confirmationProcess() {
   window.location.href = "../html/confirmation.html";
 }
 // 問い合せ確認画面の初期処理
-function confirmationLoad() {
-  // コピーライトの設定
-  setCopyright();
-  // バージョンの設定
-  setVer();
+function confirmationInitProc() {
+  // コピーライトとバージョンの設定
+  initProc();
   // セッションデータの取得
   getSessionData();
 }
-// 送信画面への遷移処理
-function sendProcess() {
+// 遷移処理
+function transitionProc() {
   // 送信画面へ遷移
   window.location.href = "../html/send.html";
 }
 // 送信画面の初期処理
-function sendLoad() {
-  // コピーライトの設定
-  setCopyright();
-  // バージョンの設定
-  setVer();
-  // セッションデータの取得
-  getSessionData();
-  // 画面項目の値を、変数へ代入
+function sendProc() {
+  // 初期処理とセッションデータの取得
+  confirmationProc();
+  // 画面項目値の保持
   // お問い合わせ項目
   const inquiryItemsValue = document.getElementById("inquiryItems").value;
   // 会社名
@@ -172,7 +166,7 @@ function sendLoad() {
   const mailValue = document.getElementById("mail").value;
   // 問い合わせ内容
   const inquiryValue = document.getElementById("inquiry").value;
-  // 送信結果判定処理
+  // 結果判定
   // お問い合わせ項目
   if (inquiryItemsValue == inquiryItemsRecruitmentAnswer) {
     document.getElementById("inquiryItemsResult").innerText = "OK";
@@ -294,8 +288,8 @@ function sendLoad() {
     document.getElementById("inquiryResult").style.color = "#FF0000";
   }
 }
-// 終了処理
-function endProcess() {
+// セッションデータ削除処理
+function delSessionData() {
   // セッションデータの削除
   sessionStorage.removeItem("inquiryItemsValue");
   sessionStorage.removeItem("companyValue");

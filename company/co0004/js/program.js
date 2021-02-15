@@ -1,12 +1,12 @@
-// 問い合せ画面の初期処理
-function inquiryLoad() {
+// 初期処理
+function initProc() {
   // コピーライトの設定
   setCopyright();
   // バージョンの設定
   setVer();
 }
 // 問合せ確認画面の入力チェック処理
-function confirmationProcess() {
+function chkTheInput() {
   // 会社名の入力チェック
   const company = document.getElementById("company");
   // 未入力の場合
@@ -52,7 +52,7 @@ function confirmationProcess() {
     // 処理終了
     return false;
   }
-  // セッションデータを保存
+  // セッションデータ保持処理
   // 会社名
   sessionStorage.setItem("companyValue", company.value);
   // 郵便番号_前半
@@ -75,27 +75,21 @@ function confirmationProcess() {
   window.location.href = "../html/confirmation.html";
 }
 // 問い合せ確認画面の初期処理
-function confirmationLoad() {
-  // コピーライトの設定
-  setCopyright();
-  // バージョンの設定
-  setVer();
+function confirmationInitProc() {
+  // コピーライトとバージョンの設定
+  initProc();
   // セッションデータの取得
   getSessionData();
 }
-// 送信画面への遷移処理
-function sendProcess() {
+// 遷移処理
+function transitionProc() {
   // 送信画面へ遷移
   window.location.href = "../html/send.html";
 }
 // 送信画面の初期処理
-function sendLoad() {
-  // コピーライトの設定
-  setCopyright();
-  // バージョンの設定
-  setVer();
-  // セッションデータの取得
-  getSessionData();
+function sendProc() {
+  // 初期処理とセッションデータの取得
+  confirmationProc();
   // 会社名
   const companyValue = document.getElementById("company").value;
   // 郵便番号_前半
@@ -117,7 +111,7 @@ function sendLoad() {
   const mailValue = document.getElementById("mail").value;
   // 問い合わせ内容
   const inquiryValue = document.getElementById("inquiry").value;
-  // 送信結果判定処理
+  // 結果判定
   // 会社名
   if (companyValue == companyAnswer) {
     document.getElementById("companyResult").innerText = "OK";
@@ -196,8 +190,8 @@ function sendLoad() {
     document.getElementById("inquiryResult").style.color = "#FF0000";
   }
 }
-// 終了処理
-function endProcess() {
+// セッションデータ削除処理
+function delSessionData() {
   // セッションデータの削除
   sessionStorage.removeItem("companyValue");
   sessionStorage.removeItem("firstPostalCodeValue");

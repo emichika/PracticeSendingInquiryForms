@@ -12,7 +12,7 @@
     <script src="..\..\..\js\common.js"></script>
     <script src="..\js\program.js"></script>
   </head>
-  <body onload="sendLoad()">
+  <body onload="sendProc()">
     <div class="container">
       <header>
         <div class="col-sm-9 items">
@@ -137,7 +137,11 @@
             readonly
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-default" onclick="endProcess()">
+        <button
+          type="submit"
+          class="btn btn-default"
+          onclick="transitionProc('send')"
+        >
           ホームへ戻る
         </button>
       </div>

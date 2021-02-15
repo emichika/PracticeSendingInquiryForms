@@ -12,7 +12,7 @@
     <script src="..\..\..\js\common.js"></script>
     <script src="..\js\program.js"></script>
   </head>
-  <body onload="confirmationLoad()">
+  <body onload="confirmationProc()">
     <div class="container">
       <header>
         <div class="col-sm-9 items">
@@ -97,7 +97,11 @@
         <button type="submit" class="btn btn-default" onclick="history.back()">
           戻る
         </button>
-        <button type="submit" class="btn btn-default" onclick="sendProcess()">
+        <button
+          type="submit"
+          class="btn btn-default"
+          onclick="transitionProc()"
+        >
           送信する
         </button>
       </div>

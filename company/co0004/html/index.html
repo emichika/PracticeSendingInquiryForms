@@ -12,7 +12,7 @@
     <script src="..\..\..\js\common.js"></script>
     <script src="..\js\program.js"></script>
   </head>
-  <body onload="inquiryLoad()">
+  <body onload="initProc()">
     <div class="container">
       <header>
         <div class="col-sm-9 items">
@@ -118,11 +118,7 @@
             rows="10"
           ></textarea>
         </div>
-        <button
-          type="submit"
-          class="btn btn-default"
-          onclick="confirmationProcess()"
-        >
+        <button type="submit" class="btn btn-default" onclick="chkTheInput()">
           確認する
         </button>
       </div>
