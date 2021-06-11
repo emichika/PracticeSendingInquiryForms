@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="..\..\..\images\favicon.ico"
+    />
+    <title>お問い合わせ確認</title>
+    <link rel="stylesheet" href="..\..\..\bootstrap\css\bootstrap.css" />
+    <link rel="stylesheet" href="..\..\..\css\common.css" />
+    <link rel="stylesheet" href="..\css\style.css" />
+    <script src="..\..\..\jQuery\jQuery-v3.5.1.js"></script>
+    <script src="..\..\..\bootstrap\js\bootstrap.js"></script>
+    <script src="..\..\..\js\common.js"></script>
+  </head>
+  <body onload="confirmationProc('co0005')">
+    <header>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <h1>お問い合わせ確認</h1>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <p>問い合わせ内容をご確認下さい。</p>
+          <form id="inquiryItems">
+            <div class="form-group">
+              <label for="inquiryItems">お問い合わせ項目</label>
+              <div>
+                <div>
+                  <input
+                    type="radio"
+                    id="business"
+                    name="inquiryItems"
+                    class="mgr-5"
+                    value="business"
+                    readonly
+                  /><label for="business" class="mgtr-3-10"
+                    >事業・サービスについて</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="documentRequest"
+                    name="inquiryItems"
+                    class="mgr-5"
+                    value="documentRequest"
+                    readonly
+                  /><label for="documentRequest" class="mgtr-3-10"
+                    >資料請求</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="recruitment"
+                    name="inquiryItems"
+                    class="mgr-5"
+                    value="recruitment"
+                    readonly
+                  /><label for="recruitment" class="mgtr-3-10"
+                    >採用について</label
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-group">
+            <label for="company">会社名</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="pseudonymReading">読み仮名</label>
+            <input
+              type="text"
+              id="pseudonymReading"
+              name="pseudonymReading"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="postalCode">郵便番号</label>
+            <input
+              type="text"
+              id="postalCode"
+              name="postalCode"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="streetAddress">住所</label>
+            <input
+              type="text"
+              id="streetAddress"
+              name="streetAddress"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="homePage">ホームページ</label>
+            <input
+              type="url"
+              id="homePage"
+              name="homePage"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label class="nameLabel" for="name">氏名</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="form-control lastName"
+              readonly
+            />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="form-control firstName"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label class="furiganaLabel" for="furigana">ふりがな</label>
+            <input
+              type="text"
+              id="lastFurigana"
+              name="lastFurigana"
+              class="form-control lastFurigana"
+              readonly
+            />
+            <input
+              type="text"
+              id="firstFurigana"
+              name="firstFurigana"
+              class="form-control firstFurigana"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="tel">電話番号</label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail">メールアドレス</label>
+            <input
+              type="email"
+              id="mail"
+              name="mail"
+              class="form-control txt-wid"
+              readonly
+            />
+          </div>
+          <form id="reply">
+            <div class="form-group">
+              <label for="reply">返信方法</label>
+              <div>
+                <div>
+                  <input
+                    type="radio"
+                    id="replyByEmail"
+                    name="reply"
+                    class="mgr-5"
+                    value="replyByEmail"
+                  /><label for="replyByEmail" class="mgtr-3-10">メール</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="replyByPhone"
+                    name="reply"
+                    class="mgr-5"
+                    value="replyByPhone"
+                  /><label for="replyByPhone" class="mgtr-3-10">電話</label>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-group">
+            <label for="inquiry">問い合わせ内容</label>
+            <textarea
+              id="inquiry"
+              name="inquiry"
+              class="form-control txtarea"
+              rows="10"
+              readonly
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-default"
+            onclick="history.back()"
+          >
+            戻る
+          </button>
+          <button
+            type="submit"
+            class="btn btn-default"
+            onclick="transitionProc('confirmation')"
+          >
+            送信する
+          </button>
+        </div>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <div class="container">
+        <p id="copyright"><span id="ver"></span></p>
+      </div>
+    </footer>
+  </body>
+</html>

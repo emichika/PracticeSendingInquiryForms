@@ -1,0 +1,14 @@
+﻿header {
+  /* 上に余白を30px */
+  margin-top: 30px;
+  /* 文字色 黄色 */
+  color: #ffb43e;
+}
+hr {
+  /* 太さ 3px */
+  border-width: 3px;
+  /* 区切り線 黄色 */
+  border-color: #ffb43e;
+  /* 上下の余白 30px */
+  margin: 30px 0;
+}

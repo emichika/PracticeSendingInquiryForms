@@ -1,0 +1,145 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+h1 {
+  /* 文字の大きさ 18px */
+  font-size: 18px;
+  /* 文字を太く */
+  font-weight: bold;
+  /* 余白なし */
+  margin: 0;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+img {
+  width: 450px;
+  height: 450px;
+}
+footer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.img-pos {
+  text-align: center;
+}
+.fc-r {
+  /* 文字色 赤色 */
+  color: #ff0000;
+}
+.items {
+  margin-right: auto;
+  margin-left: auto;
+}
+.align-right {
+  text-align: right;
+}
+.mgr-5 {
+  margin-right: 5px;
+}
+.mgtr-3-10 {
+  margin-top: 3px;
+  margin-right: 10px;
+}
+.label-danger {
+  background-color: #d9534f;
+}
+.label {
+  display: inline;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.btn-default {
+  text-shadow: 0 1px 0 #fff;
+  background-image: -webkit-linear-gradient(top, #fff 0, #e0e0e0 100%);
+  background-image: -o-linear-gradient(top, #fff 0, #e0e0e0 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fff),
+    to(#e0e0e0)
+  );
+  background-image: linear-gradient(to bottom, #fff 0, #e0e0e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  background-repeat: repeat-x;
+  border-color: #dbdbdb;
+  border-color: #ccc;
+}
+.txt-wid,
+.txtarea {
+  width: 97.5%;
+}
+.ageTxt {
+  display: inline;
+  width: 95%;
+}
+.postalCodeLabel,
+.nameLabel,
+.furiganaLabel,
+.birthdayLabel,
+.ageLabel {
+  display: block;
+}
+.firstPostalCode {
+  display: inline;
+  width: 30%;
+}
+.latterPostalCode {
+  display: inline;
+  width: 65%;
+}
+.lastName,
+.lastFurigana,
+.firstName,
+.firstFurigana {
+  display: inline;
+  width: 48.5%;
+}
+.birthdayYear {
+  display: inline;
+  width: 46%;
+}
+.birthdayDays {
+  display: inline;
+  width: 25%;
+}
+.errBtn {
+  margin-top: 50px;
+}

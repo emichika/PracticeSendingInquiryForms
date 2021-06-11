@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="..\..\..\images\favicon.ico"
+    />
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="..\..\..\bootstrap\css\bootstrap.css" />
+    <link rel="stylesheet" href="..\..\..\css\common.css" />
+    <link rel="stylesheet" href="..\css\style.css" />
+    <script src="..\..\..\jQuery\jQuery-v3.5.1.js"></script>
+    <script src="..\..\..\bootstrap\js\bootstrap.js"></script>
+    <script src="..\..\..\js\common.js"></script>
+  </head>
+  <body onload="initProc()">
+    <header>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <h1>お問い合わせ</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">トップ</a></li>
+              <li><a href="about.html">会社概要</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <p>
+            この度は、けふこえて株式会社へ、<br />
+            お問い合わせ頂きありがとうございます。<br />
+            恐れいりますが、以下のフォームにご記入頂き、<br />
+            送信して頂けますと幸いです。
+          </p>
+          <form id="inquiryItems">
+            <div class="form-group">
+              <label for="inquiryItems">お問い合わせ項目</label>
+              <div>
+                <div>
+                  <input
+                    type="radio"
+                    id="business"
+                    name="inquiryItems"
+                    class="mgr-5"
+                    value="business"
+                    checked
+                  /><label for="business" class="mgtr-3-10"
+                    >事業・サービスについて</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="documentRequest"
+                    name="inquiryItems"
+                    class="mgr-5"
+                    value="documentRequest"
+                  /><label for="documentRequest" class="mgtr-3-10"
+                    >資料請求</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="other"
+                    name="inquiryItems"
+                    class="mgr-5"
+                    value="other"
+                  /><label for="other" class="mgtr-3-10">その他</label>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-group">
+            <label for="company">
+              会社名<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label class="postalCodeLabel" for="postalCode">郵便番号</label>
+            <input
+              type="text"
+              id="firstPostalCode"
+              name="firstPostalCode"
+              class="form-control firstPostalCode"
+            />
+            <label>-</label>
+            <input
+              type="text"
+              id="latterPostalCode"
+              name="latterPostalCode"
+              class="form-control latterPostalCode"
+            />
+          </div>
+          <div class="form-group">
+            <label class="firstStreetAddressLabel" for="firstStreetAddress"
+              >住所 1</label
+            >
+            <input
+              type="text"
+              id="firstStreetAddress"
+              name="firstStreetAddress"
+              class="form-control txt-wid"
+              placeholder="○○県○○市○丁目○-○"
+            />
+          </div>
+          <div class="form-group">
+            <label class="latterStreetAddressLabel" for="latterStreetAddress"
+              >住所 2</label
+            >
+            <input
+              type="text"
+              id="latterStreetAddress"
+              name="latterStreetAddress"
+              class="form-control txt-wid"
+              placeholder="ビル・建物名"
+            />
+          </div>
+          <div class="form-group">
+            <label for="department">部署名</label>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="nameLabel" for="name"
+              >氏名<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="form-control lastName"
+            />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="form-control firstName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastFurigana" class="furiganaLabel" for="furigana"
+              >フリガナ<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="lastFurigana"
+              name="lastFurigana"
+              class="form-control lastFurigana"
+            />
+            <input
+              type="text"
+              id="firstFurigana"
+              name="firstFurigana"
+              class="form-control firstFurigana"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tel">
+              電話番号<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail">
+              メールアドレス<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="email"
+              id="mail"
+              name="mail"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inquiry"
+              >問い合わせ内容<span class="label label-danger">必須</span></label
+            >
+            <textarea
+              id="inquiry"
+              name="inquiry"
+              class="form-control txtarea"
+              rows="10"
+              placeholder="400文字以内"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-default"
+            onclick="chkTheInput('co0003')"
+          >
+            確認する
+          </button>
+        </div>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <div class="container">
+        <p id="copyright"><span id="ver"></span></p>
+      </div>
+    </footer>
+  </body>
+</html>

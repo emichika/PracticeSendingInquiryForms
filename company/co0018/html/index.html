@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="..\..\..\images\favicon.ico"
+    />
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="..\..\..\bootstrap\css\bootstrap.css" />
+    <link rel="stylesheet" href="..\..\..\css\common.css" />
+    <link rel="stylesheet" href="..\css\style.css" />
+    <script src="..\..\..\jQuery\jQuery-v3.5.1.js"></script>
+    <script src="..\..\..\bootstrap\js\bootstrap.js"></script>
+    <script src="..\..\..\js\common.js"></script>
+  </head>
+  <body onload="initProc()">
+    <header>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <h1>お問い合わせ確認</h1>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <p>
+            この度は、お問い合わせ頂きありがとうございます。<br />
+            恐れいりますが、以下のフォームにご記入頂き、<br />
+            送信して頂けますと幸いです。
+          </p>
+          <div class="form-group">
+            <label for="company"
+              >会社名<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label
+              for="firstPostalCode"
+              class="postalCodeLabel"
+              for="postalCode"
+              >郵便番号</label
+            >
+            <input
+              type="text"
+              id="firstPostalCode"
+              name="firstPostalCode"
+              class="form-control firstPostalCode"
+            />
+            <label>-</label>
+            <input
+              type="text"
+              id="latterPostalCode"
+              name="latterPostalCode"
+              class="form-control latterPostalCode"
+            />
+          </div>
+          <div class="form-group">
+            <label class="firstStreetAddressLabel" for="firstStreetAddress"
+              >住所 1</label
+            >
+            <input
+              type="text"
+              id="firstStreetAddress"
+              name="firstStreetAddress"
+              class="form-control txt-wid"
+              placeholder="○○県○○市○丁目○-○"
+            />
+          </div>
+          <div class="form-group">
+            <label class="latterStreetAddressLabel" for="latterStreetAddress"
+              >住所 2</label
+            >
+            <input
+              type="text"
+              id="latterStreetAddress"
+              name="latterStreetAddress"
+              class="form-control txt-wid"
+              placeholder="ビル・建物名"
+            />
+          </div>
+          <div class="form-group">
+            <label for="department">部署名</label>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="nameLabel" for="name"
+              >氏名<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="form-control lastName"
+            />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="form-control firstName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastFurigana" class="furiganaLabel" for="furigana"
+              >ふりがな<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="lastFurigana"
+              name="lastFurigana"
+              class="form-control lastFurigana"
+            />
+            <input
+              type="text"
+              id="firstFurigana"
+              name="firstFurigana"
+              class="form-control firstFurigana"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tel"
+              >電話番号<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail"
+              >メールアドレス<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="email"
+              id="mail"
+              name="mail"
+              class="form-control txt-wid"
+            />
+          </div>
+          <form id="systems">
+            <div class="form-group">
+              <label
+                >導入システム<span class="label label-danger">必須</span></label
+              >
+              <div>
+                <input
+                  type="checkbox"
+                  id="attendanceSys"
+                  name="systems"
+                  value="attendanceSys"
+                /><label for="attendanceSys" class="mgtr-3-10"
+                  >勤怠管理システム</label
+                >
+                <input
+                  type="checkbox"
+                  id="documentsSys"
+                  name="systems"
+                  value="documentsSys"
+                /><label for="documentsSys" class="mgtr-3-10"
+                  >文書管理システム</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="stockSys"
+                  name="systems"
+                  value="stockSys"
+                /><label for="stockSys" class="mgtr-3-10"
+                  >在庫管理システム</label
+                >
+                <input
+                  type="checkbox"
+                  id="bidSys"
+                  name="systems"
+                  value="bidSys"
+                /><label for="bidSys" class="mgtr-3-10">入札管理システム</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="groupware"
+                  name="systems"
+                  value="groupware"
+                /><label for="groupware" class="mgtr-3-10"
+                  >グループウェア</label
+                >
+                <input
+                  type="checkbox"
+                  id="othersys"
+                  name="systems"
+                  value="othersys"
+                /><label for="othersys" class="mgtr-3-10">その他システム</label>
+              </div>
+            </div>
+          </form>
+          <div class="form-group">
+            <label for="inquiry"
+              >問い合わせ内容<span class="label label-danger">必須</span></label
+            >
+            <textarea
+              id="inquiry"
+              name="inquiry"
+              class="form-control txtarea"
+              rows="10"
+              placeholder="300文字以内"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-default"
+            onclick="chkTheInput('co0018')"
+          >
+            確認する
+          </button>
+        </div>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <div class="container">
+        <p id="copyright"><span id="ver"></span></p>
+      </div>
+    </footer>
+  </body>
+</html>

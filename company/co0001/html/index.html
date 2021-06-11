@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="..\..\..\images\favicon.ico"
+    />
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="..\..\..\bootstrap\css\bootstrap.css" />
+    <link rel="stylesheet" href="..\..\..\css\common.css" />
+    <link rel="stylesheet" href="..\css\style.css" />
+    <script src="..\..\..\jQuery\jQuery-v3.5.1.js"></script>
+    <script src="..\..\..\bootstrap\js\bootstrap.js"></script>
+    <script src="..\..\..\js\common.js"></script>
+  </head>
+  <body onload="initProc()">
+    <header>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <h1>お問い合わせ</h1>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <div class="container">
+        <div class="col-sm-10 items">
+          <p>
+            この度は、お問い合わせ頂きありがとうございます。<br />
+            恐れいりますが、以下のフォームにご記入頂き、<br />
+            送信して頂けますと幸いです。
+          </p>
+          <div class="form-group">
+            <label for="company">
+              会社名<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">
+              氏名<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tel">
+              電話番号<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail">
+              メールアドレス<span class="label label-danger">必須</span></label
+            >
+            <input
+              type="email"
+              id="mail"
+              name="mail"
+              class="form-control txt-wid"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inquiry"
+              >問い合わせ内容<span class="label label-danger">必須</span></label
+            >
+            <textarea
+              id="inquiry"
+              name="inquiry"
+              class="form-control txtarea"
+              rows="10"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-default"
+            onclick="chkTheInput('co0001')"
+          >
+            確認する
+          </button>
+        </div>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <div class="container">
+        <p id="copyright"><span id="ver"></span></p>
+      </div>
+    </footer>
+  </body>
+</html>

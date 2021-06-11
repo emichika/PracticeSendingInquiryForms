@@ -1,0 +1,17 @@
+﻿header {
+  /* 上に余白を30px */
+  margin-top: 30px;
+  /* 文字色 紫色 */
+  color: #a92e9f;
+}
+hr {
+  /* 太さ 3px */
+  border-width: 3px;
+  /* 区切り線 紫色 */
+  border-color: #a92e9f;
+  /* 上下の余白 30px */
+  margin: 30px 0;
+}
+#test {
+  display: inline-block;
+}
